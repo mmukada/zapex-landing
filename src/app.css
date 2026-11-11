@@ -1,0 +1,59 @@
+@import 'tailwindcss';
+
+@font-face {
+	font-family: 'Inter Variable';
+	font-style: normal;
+	font-weight: 100 900;
+	font-synthesis: none;
+	font-display: swap;
+	src: url('/fonts/inter-variable-subset.woff2') format('woff2');
+}
+
+@theme {
+	--font-sans: 'Inter Variable', system-ui, sans-serif;
+	--font-system: system-ui, sans-serif;
+
+	/* Content column width; the decorative section frame is slightly wider. */
+	--max-width-layout: 1024px;
+	--max-width-frame: 1080px;
+
+	--color-primary: #039;
+	--color-accent: #2f6396;
+	--color-navy: #001e6c;
+	--color-error: red;
+
+	--radius-md: 0.5rem;
+	--radius-lg: 0.625rem;
+	--radius-xl: 0.875rem;
+
+	/* What moves in the product illustrations. */
+	--animate-caret-blink: caret-blink 1.1s steps(1) infinite;
+	--animate-halo-pulse: halo-pulse 2.4s ease-in-out infinite;
+
+	@keyframes caret-blink {
+		50% {
+			opacity: 0;
+		}
+	}
+
+	@keyframes halo-pulse {
+		50% {
+			transform: scale(1.18);
+			opacity: 0.6;
+		}
+	}
+}
+
+@layer base {
+	* {
+		@apply border-neutral-200 outline-neutral-400/50;
+	}
+
+	html {
+		scrollbar-gutter: stable;
+	}
+
+	body {
+		@apply min-h-dvh bg-white text-neutral-950;
+	}
+}
